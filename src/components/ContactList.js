@@ -1,4 +1,5 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 export const ContactList = ({visibleFilter, onDeleteContact}) => {
     return (
@@ -13,6 +14,20 @@ export const ContactList = ({visibleFilter, onDeleteContact}) => {
         </ContactListStyle>
     )
 }
+
+
+
+ContactList.propTypes = {
+    visibleFilter: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        number: PropTypes.string.isRequired,
+      }).isRequired
+    ),
+    onDeleteContact: PropTypes.func,
+  };
+
 
 
 

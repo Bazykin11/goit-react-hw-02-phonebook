@@ -1,15 +1,24 @@
 import React from "react";
 import styled from '@emotion/styled'
+import PropTypes from 'prop-types';
 
 
 const Filter = ({value, onChange}) => (
-    <Label>
-    Find contacts by name
-    <Input type="text" value={value} onChange={onChange}/>
+  <Label>
+      Find contacts by name
+      <Input type="text" value={value} onChange={onChange}/>
   </Label>
 );
 
 export default Filter;
+
+
+Filter.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};
+
+
+
 
 /////////////////////////////// STYLE /////////////////////////
 
@@ -31,3 +40,5 @@ const Input = styled.input`
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 `
+
+
